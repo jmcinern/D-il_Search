@@ -1,7 +1,8 @@
-boto3
+streamlit
+openai
 chromadb
+boto3
 langchain
 langchain-community
-openai
-streamlit
 thefuzz[speedup]
+python-Levenshtein

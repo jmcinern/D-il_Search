@@ -144,3 +144,21 @@ def generate_answer(speaker_name, topic, list_of_speakers, num_results=5):
 
 # get final answer
 final_answer = generate_answer(speaker, topic,  SPEAKERS)
+
+# 3. Streamlit UI
+def main():
+    st.title("Dáil Speeches Explorer 🇮🇪")
+
+    speaker = st.text_input("Speaker name", placeholder="e.g. Micheál Martin")
+    topic   = st.text_input("Topic",         placeholder="e.g. housing, Brexit…")
+
+    if st.button("Search"):
+        if not speaker or not topic:
+            st.warning("Please enter both a speaker and a topic.")
+        else:
+            with st.spinner("🔍 Fetching quotes…"):
+                answer = generate_answer(speaker, topic, SPEAKERS)
+            st.markdown(answer)
+
+if __name__ == "__main__":
+    main()

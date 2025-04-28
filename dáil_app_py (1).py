@@ -102,6 +102,7 @@ full_prompt = ChatPromptTemplate.from_messages([
 ])
 
 # use nano for app so its cheaper
+openai.api_key = st.secrets["openai"]["api_key"]
 gpt_nano = ChatOpenAI(
     model_name="gpt-4.1-nano",
     temperature=0.9,

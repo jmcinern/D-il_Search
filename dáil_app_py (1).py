@@ -9,7 +9,7 @@ Original file is located at
 
 import chromadb # Vector DB.
 import json # storing examples for few-shot prompting.
-import thefuzz[speedup] # for fuzzy look up of speaker name
+from thefuzz import process # for fuzzy look up of speaker name
 import langchain # for few-shot prompting to provide examplar responses
 import langchain_community
 import openai # the model for generation
